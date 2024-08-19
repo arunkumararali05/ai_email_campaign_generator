@@ -1,0 +1,40 @@
+campaign_information_generation_task:
+  description: 'You are given detailed campaign information to generate a comprehensive
+    report about the campaign, including a blend of user and company information.
+    The attributes include company name, product name, product category, product highlight,
+    target age of user, target country, user interests, and user income level. Use
+    the information given about the campaign under the campaign_profile field to generate
+    the report. Campaign profile: Company Name: Dell, Product Name: Laptop, Product
+    Category: Electronics, Product highlights: Durable,Coupon Code: FIRST10, Discount
+    applied: 10%, Campaign Name: Winter sale, Target user age range: 0-100, Target
+    user Location: Bangalore, Target user interests: Technology, Premium subscription
+    customer: Not specified, Target user occupation: Not specified, User marital Status:
+    Not specified, Target user income Level: Not specified, Support Email: Dell@support.com,
+    Support Phone: 01234567899'
+  expected_output: A detailed report summarizing the campaign, including all relevant
+    attributes such as company name, product name, product category, product highlight,
+    target age of user, target country, user interests, and user income level. This
+    report will be used by the Email Generator agent to create personalized email
+    content.
+  type: Information Collection
+editor_task:
+  description: 'Review and refine the final email content produced by the Email Generator
+    agent. Ensure the content is grammatically correct, aligns with the user profile,
+    and meets the company''s tone and style requirements. '
+  expected_output: 'Finalized email content that is grammatically accurate, consistent
+    with the user profile provided by the Information Collector agent, and aligned
+    with the company''s marketing goals. Ensure the email is polished, professional,
+    and effective in achieving its purpose. Do not add any extra line to the generated
+    email.Do not mention the lines saying its gramatically correct.
+
+    '
+  type: Text Editing
+email_generation_task:
+  description: 'Generate an email for inputs given
+
+    '
+  expected_output: A complete HTML email with an attractive design, personalized content,
+    and all necessary elements including header , body and footer .Do not add placeholder
+    for images. Do not add subject on top of header.The email should accurately reflect
+    the campaign details and be optimized for high engagement and conversion.
+  type: Text Generation
